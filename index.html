@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restoration Kings | Atlanta Water Damage Restoration Experts</title>
+  <meta name="description" content="Atlanta's Trusted 24/7 Water Damage Restoration Experts. Fast emergency response for water, mold, fire, and storm damage. Call now for free estimates!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0f1729;
+      --orange: #f97316;
+      --white: #fff;
+      --gray: #f8fafc;
+      --star: #ffa800;
+      --inter: 'Inter', Arial, Helvetica, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--inter); margin:0; background: var(--gray); color: var(--navy); }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4 { font-weight: 700; margin:0 0 10px; }
+    .container { max-width: 1150px; margin:auto; padding:0 1.3rem; }
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 50; background: var(--navy);
+      box-shadow: 0 1px 6px 0 rgba(15,23,41,.07);
+    }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+    .logo { color: var(--white); font-size: 1.55rem; font-weight: 700; letter-spacing:1.5px; }
+    nav { display: flex; gap: 1.8rem; }
+    .nav-link { color: var(--white); font-size: 1.05rem; font-weight: 400; position: relative; padding: 2px 0;}
+    .nav-link.active,.nav-link:hover { color: var(--orange);}
+    .phone-btn { background: var(--orange); color: var(--navy); font-weight: 700; padding: 0.55em 1.3em; font-size: 1rem; border-radius: 22px; margin-left: 1.5rem; border: none; transition: background .2s; cursor:pointer;}
+    .phone-btn:hover { background: #fc8f3f; }
+    /* Hamburger */
+    .hamburger { display: none; flex-direction: column; cursor: pointer; gap:6px; margin-left:1rem;}
+    .bar { height: 3px; width: 27px; background: var(--white); border-radius: 2px;}
+    /* Mobile menu */
+    .mobile-nav {
+      display:none; flex-direction:column; background:var(--navy); position: fixed; top:70px; right:0; left:0; padding:1.7rem 2rem 1.7rem 2rem; gap:1.3rem; z-index:100;
+    }
+    .mobile-nav .nav-link { font-size: 1.2rem; }
+    /* Hero */
+    .hero {
+      background: linear-gradient(rgba(15,23,41,0.78), rgba(15,23,41,0.85)), url('https://images.pexels.com/photos/6471927/pexels-photo-6471927.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
+      color: var(--white);
+      padding: 68px 0 38px 0;
+      text-align: center;
+      position:relative;
+    }
+    .hero h1 { font-size: 2.55rem; }
+    .hero-sub { font-size: 1.21rem; margin-bottom: 1.8rem; }
+    .hero-cta {
+      display: flex; justify-content: center; gap: 1.1rem; margin-bottom:1.7rem;
+      flex-wrap:wrap;
+    }
+    .hero .btn {
+      padding: 0.95em 2.15em; font-size: 1.11rem; border-radius: 25px; font-weight: 700; border:2px solid transparent; cursor:pointer; text-decoration:none; transition: filter 0.16s,background 0.16s,border-color 0.15s;
+    }
+    .hero .btn.primary { background: var(--orange); color: var(--navy); border-color: var(--orange);}
+    .hero .btn.primary:hover { background:#fc8f3f; }
+    .hero .btn.outline { background:transparent; color: var(--white); border:2px solid var(--white);}
+    .hero .btn.outline:hover { background:rgba(255,255,255,0.08); }
+    .trust-badges {
+      display: flex; flex-wrap:wrap; justify-content: center; gap: 2.2rem; margin-top:3rem; margin-bottom:5px;
+    }
+    .trust-badge {
+      display: flex; align-items: center; gap: 0.7rem; font-size:1rem; color:var(--white); font-weight:600;
+    }
+    .trust-badge svg { width:1.6em; height:1.6em; }
+    /* Services */
+    .services {
+      padding: 3.5rem 0 2.9rem 0; background: var(--white);
+    }
+    .services-title {text-align:center; font-size:2.1rem; margin-bottom:2.3rem;}
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 2.2rem; max-width: 1000px; margin:0 auto;
+    }
+    .service-card {
+      background: var(--navy); color: var(--white); border-radius: 17px; box-shadow: 0 4px 12px 0 rgba(15,23,41,0.04);
+      padding: 0; display: flex; flex-direction: column; align-items: flex-start; transition: filter .16s,transform .14s;
+      min-height:320px; position:relative; overflow:hidden; cursor:pointer;
+    }
+    .service-card:hover { filter: brightness(1.04) drop-shadow(0 3px 13px rgba(18,17,39,0.11)); transform:translateY(-2px) scale(1.025);}
+    .service-card svg { width:2.2em; height:2.2em; margin-bottom:0.95rem; }
+    .service-img { width:100%; height:160px; object-fit:cover; display:block; }
+    .service-card-body { padding: 1.4rem 1.7rem 1.6rem; }
+    .service-title { font-size: 1.27rem; font-weight: 700; margin-bottom:0.72rem;}
+    .service-desc { font-size:1.02rem; font-weight:400; }
+    /* How it Works */
+    .steps-section { background: var(--gray); padding: 2.7rem 0 3.7rem 0; }
+    .steps-title { text-align:center; font-size:2.03rem; margin-bottom:2.0rem;}
+    .steps {
+      display:flex; justify-content:center; align-items:stretch; gap: 2rem; max-width: 1150px; margin:0 auto; flex-wrap:wrap;
+    }
+    .step { background:var(--white); border-radius:14px; box-shadow: 0 2px 7px 0 rgba(15,23,41,0.04); text-align:center;
+      padding:2.2rem 1.6rem 1.8rem; flex:1 1 0; min-width:0; position:relative; margin-bottom:1rem;
+    }
+    .step-number { font-size:2rem; font-weight:700; color:var(--orange); margin-bottom: 0.5rem;}
+    .step-title { font-size:1.13rem; font-weight:700; margin-bottom:0.5rem;}
+    .step-desc { font-size:1.01rem; font-weight:400; color:var(--navy); }
+    /* Steps connector */
+    @media (min-width:700px) {
+      .steps { position:relative; }
+      .steps::before {
+        content:''; position:absolute; top:68px; left:60px; right:60px; height:3px; background:var(--orange); z-index:0;
+      }
+      .step { z-index:1; }
+    }
+    /* Emergency Lead Form */
+    .form-section {
+      background: var(--white); padding: 2.8rem 0 3.0rem 0; box-shadow: 0 7px 40px 0 rgba(15,23,41,.04);
+    }
+    .form-wrap { display: flex; align-items: stretch; gap:2.5rem; max-width: 900px; margin:0 auto; flex-wrap:wrap; }
+    .form-cta { flex:1; min-width: 220px; display: flex; flex-direction:column; justify-content:center; }
+    .form-cta h3 { font-size:1.55rem; margin-bottom:1.15rem; }
+    .form-cta ul { padding-left: 1.5em; margin:0 0 0.5rem 0; font-size:1.075rem; font-weight:400; color:var(--navy);}
+    .form-cta li { margin-bottom:0.45em; }
+    .lead-form-container { flex:1; min-width: 240px; }
+    .lead-form {
+      display:flex;flex-direction:column;gap:1.0rem;width:100%;background:var(--gray);border-radius:13px;padding:2rem 1.3rem 1.43rem 1.3rem;
+    }
+    .lead-form label {font-weight:600;margin-bottom:3px;}
+    .lead-form input,.lead-form textarea  { width:100%;padding:0.95em 1em;margin-bottom:0;border-radius:8px;border:1.1px solid #cbd5e1;font-size:1rem;font-family:inherit;}
+    .lead-form textarea { resize:vertical; min-height:65px; }
+    .lead-form button {
+      background:var(--orange);color:var(--navy);font-weight:700;font-size:1.13rem;padding:0.9em 0;border-radius:9px;border:none;cursor:pointer; margin-top:0.3rem;transition:background .2s;
+    }
+    .lead-form button:hover { background:#fc8f3f; }
+    /* Reviews & Trust */
+    .reviews-section { background:var(--gray); padding:3.1rem 0 2.4rem; text-align:center; }
+    .reviews-stars { color: var(--star); font-size:2.2rem; }
+    .reviews-rating { color: var(--navy); font-size:1.8rem; font-weight:700; margin-bottom:0.5rem; }
+    .trust-metrics { margin-top:2.2rem; display:flex;justify-content:center;gap:1.9rem;flex-wrap:wrap; }
+    .trust-metric { background:var(--white); padding:1.1em 1.7em; border-radius:14px; font-weight:700; color:var(--navy); font-size:1.05rem;box-shadow:0 3px 13px 0 rgba(18,17,39,0.06); }
+    .reviews-btn { background:var(--orange);color:var(--navy);padding:0.69em 1.7em; font-size:1.09rem; border-radius:24px; font-weight:700; text-decoration:none; display:inline-block; margin-top:1.7rem; border:none; transition:background .18s; }
+    .reviews-btn:hover { background:#fc8f3f; }
+    /* FAQ */
+    .faq-section { background: var(--white); padding: 3.15rem 0 3.2rem; }
+    .faq-title { text-align:center; font-size:2.0rem; margin-bottom:2.1rem;}
+    .faq-list { max-width: 830px; margin:0 auto; }
+    .faq-item { border-bottom:1.1px solid #dbeafe; padding:1.14rem 0; }
+    .faq-q { font-weight:600; font-size:1.12rem; cursor:pointer; position:relative; padding-right:2.2em; user-select:none; display:block;}
+    .faq-q::after { content:'+'; position:absolute; right:0; top:0.01em; color:var(--orange); font-size:1.6rem; transition: transform .18s;}
+    .faq-item input[type=checkbox] { display:none; }
+    .faq-item input[type=checkbox]:checked ~ .faq-a { max-height: 400px; padding-top:0.7rem; }
+    .faq-item input[type=checkbox]:checked ~ .faq-q::after { content:'−'; transform: rotate(180deg); }
+    .faq-a { max-height:0; overflow:hidden; transition: max-height .16s,padding-top .16s; font-size:1.04rem; color:#25304c; }
+    /* Service Area */
+    .area-section { padding:3.4rem 0 3.5rem; background:var(--gray); text-align:center; }
+    .area-title { font-size:1.5rem; font-weight:700; margin-bottom:1.3rem; }
+    .area-map { display:flex; justify-content:center;margin-top:1rem; }
+    .area-map iframe { 
+      width:100%; max-width:530px; min-height:270px; border:0; border-radius: 14px; box-shadow:0 3px 12px 0 rgba(18,17,39,0.09); 
+    }
+    /* Footer */
+    footer { background:var(--navy); color:var(--white); padding:2.25rem 0 1.6rem 0; }
+    .footer-inner { display:flex;flex-wrap:wrap;justify-content:space-between;gap:2.3rem;align-items:flex-start; max-width:1100px; margin:0 auto; }
+    .footer-left { display:flex;flex-direction:column; gap:0.9rem; }
+    .footer-logo { font-size: 1.25rem; font-weight:700; letter-spacing:1.5px; }
+    .footer-contact { font-size:1.04rem; }
+    .footer-hours { font-size:1.01rem; }
+    .footer-nav { display:flex;gap:1.1rem;flex-wrap:wrap; }
+    .footer-nav-link { color:var(--white);font-size:1rem; font-weight:400; transition: color .18s;text-decoration:none;}
+    .footer-nav-link:hover{ color:var(--orange); }
+    .footer-copy { color:#cbd5e1;font-size:0.98rem;margin-top:0.95rem;}
+    /* Mobile Responsive */
+    @media (max-width: 980px) {
+      .services-grid { grid-template-columns: repeat(2,1fr); }
+      .footer-inner { flex-direction:column; align-items:flex-start; }
+      .form-wrap { flex-direction:column; }
+    }
+    @media (max-width:700px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .header-inner { height:54px; }
+      .logo { font-size:1.1rem; }
+      nav { display:none; }
+      .hamburger { display:flex; }
+      .mobile-nav { display:flex; }
+      .footer-inner { flex-direction:column; gap:1.2rem; }
+      .faq-list { padding-left:0.25rem; }  
+      .steps { flex-direction:column; gap:1.5rem; }
+      .area-map iframe { min-height:190px; }
+    }
+    /* Mobile sticky call now bar */
+    #mobile-call-bar {
+      display: none;
+      position: fixed;
+      left:0; right:0; bottom:0; z-index:151;
+      background:var(--orange); color:var(--navy); font-weight:700; font-size:1.18rem;
+    }
+    #mobile-call-bar a {
+      display: flex; align-items: center; justify-content: center; gap:0.8rem; text-align:center; height:58px; text-decoration:none; color: inherit; }
+    #mobile-call-bar svg { width:1.1em; height:1.1em; }
+    @media (max-width:700px) {
+      #mobile-call-bar { display:block; }
+      .phone-btn { display:none; }
+    }
+    /* Form: Full width inputs on mobile */
+    @media (max-width:700px) {
+      .lead-form { padding:1.1rem 0.4rem; }
+    }
+    /* Touch targets */
+    button, input, textarea, .nav-link, .footer-nav-link { min-height:44px; }
+  </style>
+</head>
+<body>
+  <!-- Sticky Header -->
+  <header>
+    <div class="container header-inner">
+      <span class="logo">RESTORATION KINGS</span>
+      <nav id="main-nav">
+        <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#how">How It Works</a>
+        <a class="nav-link" href="#reviews">Reviews</a>
+        <a class="nav-link" href="#faq">FAQ</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+      <a class="phone-btn" href="tel:14044918602">(404) 491-8602</a>
+      <div class="hamburger" id="menu-btn" aria-label="Open Menu" tabindex="0">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a class="nav-link" href="#services" tabindex="0">Services</a>
+      <a class="nav-link" href="#how" tabindex="0">How It Works</a>
+      <a class="nav-link" href="#reviews" tabindex="0">Reviews</a>
+      <a class="nav-link" href="#faq" tabindex="0">FAQ</a>
+      <a class="nav-link" href="#contact" tabindex="0">Contact</a>
+    </nav>
+  </header>
+  <div id="mobile-call-bar">
+    <a href="tel:14044918602">
+      <svg fill="none" viewBox="0 0 20 20"><path stroke="#0f1729" stroke-width="2" d="M2.7 3.6c0 7.3 6.5 13.6 14.6 13.6l-2.2-3.3a1.5 1.5 0 0 0-2-.5l-1 0.7a2.5 2.5 0 0 1-2.8-0.3l-2.1-2a2.5 2.5 0 0 1-0.3-2.8l0.7-1a1.5 1.5 0 0 0-0.5-2z"/></svg>
+      CALL NOW (404) 491-8602
+    </a>
+  </div>
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <h1>Atlanta's Trusted Water Damage Restoration Experts</h1>
+      <div class="hero-sub">24/7 Emergency Response &bull; Licensed &amp; Insured &bull; Free Estimates</div>
+      <div class="hero-cta">
+        <a href="#contact" class="btn primary">GET HELP NOW</a>
+        <a href="tel:14044918602" class="btn outline">CALL (404) 491-8602</a>
+      </div>
+      <div class="trust-badges">
+        <span class="trust-badge">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/><path d="M12 7v4l2.8 2.8" stroke="var(--orange)" stroke-width="2" stroke-linecap="round"/></svg>
+          24/7 Emergency
+        </span>
+        <span class="trust-badge">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l6.16 3.44a2 2 0 0 1 .91 2.38l-1.3 6.01a2 2 0 0 1-.88 1.21l-5.02 2.89a2 2 0 0 1-2.17 0l-5.02-2.89a2 2 0 0 1-.88-1.21l-1.3-6.01a2 2 0 0 1 .91-2.38L12 2z" stroke="white" stroke-width="2"/><path d="M12 8v4" stroke="var(--orange)" stroke-width="2" stroke-linecap="round"/></svg>
+          Licensed &amp; Insured
+        </span>
+        <span class="trust-badge">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" stroke="white" stroke-width="2"/><path d="M12 15.4l3.76 2.26-1-4.28L17.6 11h-4.34l-1-4.28L8.24 11H3.6l3.84 2.38-1 4.28L12 15.4z" stroke="var(--orange)" stroke-width="2"/></svg>
+          5-Star Rated
+        </span>
+        <span class="trust-badge">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" rx="3" stroke="white" stroke-width="2"/><path d="M8 9h8M8 13h6" stroke="var(--orange)" stroke-width="2"/></svg>
+          Free Estimates
+        </span>
+      </div>
+    </div>
+  </section>
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2 class="services-title">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <img class="service-img" src="https://images.pexels.com/photos/9090184/pexels-photo-9090184.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Emergency water damage restoration" loading="lazy">
+          <div class="service-card-body">
+            <div class="service-title">24/7 Emergency Water Damage Restoration</div>
+            <div class="service-desc">Rapid response crew available around the clock to contain, extract, and mitigate water damage from broken pipes, appliance failures, floods, and other emergencies.</div>
+          </div>
+        </div>
+        <div class="service-card">
+          <img class="service-img" src="https://images.pexels.com/photos/6471927/pexels-photo-6471927.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Water extraction and removal" loading="lazy">
+          <div class="service-card-body">
+            <div class="service-title">Water Extraction &amp; Removal</div>
+            <div class="service-desc">State-of-the-art equipment to remove standing water quickly, preventing further damage or mold growth.</div>
+          </div>
+        </div>
+        <div class="service-card">
+          <img class="service-img" src="https://images.pexels.com/photos/416423/pexels-photo-416423.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Structural drying equipment" loading="lazy">
+          <div class="service-card-body">
+            <div class="service-title">Structural Drying</div>
+            <div class="service-desc">Industrial fans, dehumidifiers, and specialist techniques ensure complete drying of floors, walls, and hidden cavities.</div>
+          </div>
+        </div>
+        <div class="service-card">
+          <img class="service-img" src="https://images.pexels.com/photos/4099260/pexels-photo-4099260.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Mold remediation specialist" loading="lazy">
+          <div class="service-card-body">
+            <div class="service-title">Mold Remediation</div>
+            <div class="service-desc">Certified mold remediation to fully remove mold, address the cause, and restore safe air quality.</div>
+          </div>
+        </div>
+        <div class="service-card">
+          <img class="service-img" src="https://images.pexels.com/photos/5562829/pexels-photo-5562829.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Fire and smoke damage restoration" loading="lazy">
+          <div class="service-card-body">
+            <div class="service-title">Fire &amp; Smoke Damage</div>
+            <div class="service-desc">Comprehensive cleanup, deodorization, and rebuilding services after fire or smoke incidents.</div>
+          </div>
+        </div>
+        <div class="service-card">
+          <img class="service-img" src="https://images.pexels.com/photos/28447808/pexels-photo-28447808.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Storm and flood damage cleanup" loading="lazy">
+          <div class="service-card-body">
+            <div class="service-title">Storm &amp; Flood Cleanup</div>
+            <div class="service-desc">Emergency services to remediate and restore property affected by severe storms or flash flooding.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- How It Works -->
+  <section class="steps-section" id="how">
+    <div class="container">
+      <h2 class="steps-title">How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <svg viewBox="0 0 48 48" fill="none" width="48" height="48" style="margin-bottom:0.7rem"><circle cx="24" cy="24" r="20" stroke="var(--orange)" stroke-width="2.5"/><path d="M16 28c0-5 6-10 8-14 2 4 8 9 8 14a8 8 0 01-16 0z" fill="none" stroke="var(--navy)" stroke-width="2"/><path d="M20 30a4 4 0 008 0" stroke="var(--orange)" stroke-width="2"/></svg>
+          <div class="step-title">Call Us</div>
+          <div class="step-desc">Call <strong>(404) 491-8602</strong> any time, day or night. We answer 24/7.</div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <svg viewBox="0 0 48 48" fill="none" width="48" height="48" style="margin-bottom:0.7rem"><rect x="8" y="18" width="32" height="18" rx="4" stroke="var(--navy)" stroke-width="2.5"/><path d="M16 18V14a8 8 0 0116 0v4" stroke="var(--orange)" stroke-width="2.5"/><circle cx="24" cy="28" r="3" fill="var(--orange)"/></svg>
+          <div class="step-title">We Arrive Fast</div>
+          <div class="step-desc">Our crew is dispatched immediately for rapid on-site assessment.</div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <svg viewBox="0 0 48 48" fill="none" width="48" height="48" style="margin-bottom:0.7rem"><rect x="6" y="10" width="36" height="28" rx="4" stroke="var(--navy)" stroke-width="2.5"/><path d="M6 18h36" stroke="var(--orange)" stroke-width="2"/><path d="M14 26h10M14 32h6" stroke="var(--navy)" stroke-width="2" stroke-linecap="round"/><path d="M30 24l4 4 6-8" stroke="var(--orange)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="step-title">We Handle Insurance</div>
+          <div class="step-desc">We work directly with your insurer — paperwork, claims, hassle-free.</div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <svg viewBox="0 0 48 48" fill="none" width="48" height="48" style="margin-bottom:0.7rem"><path d="M8 38h32" stroke="var(--navy)" stroke-width="2.5"/><path d="M12 38V20l12-10 12 10v18" stroke="var(--navy)" stroke-width="2.5" stroke-linejoin="round"/><rect x="19" y="26" width="10" height="12" rx="1" stroke="var(--orange)" stroke-width="2"/><circle cx="24" cy="16" r="3" fill="var(--orange)"/></svg>
+          <div class="step-title">Home Restored</div>
+          <div class="step-desc">Full cleanup, repairs, and restoration — back to pre-loss condition.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Emergency Lead Form -->
+  <section class="form-section" id="contact">
+    <div class="container">
+      <div class="form-wrap">
+        <div class="form-cta">
+          <h3>Need Emergency Help?</h3>
+          <ul>
+            <li>Rapid Response, 24/7</li>
+            <li>Insurance Assistance</li>
+            <li>Free Estimates</li>
+          </ul>
+        </div>
+        <div class="lead-form-container">
+          <form class="lead-form" autocomplete="off">
+            <label for="lf-name">Name</label>
+            <input type="text" id="lf-name" name="name" autocomplete="name" required />
+            <label for="lf-phone">Phone</label>
+            <input type="tel" id="lf-phone" name="phone" autocomplete="tel" required />
+            <label for="lf-zip">Zip Code</label>
+            <input type="text" id="lf-zip" name="zip" maxlength="10" required />
+            <label for="lf-what">What happened?</label>
+            <textarea id="lf-what" name="what" maxlength="300" required></textarea>
+            <button type="submit">GET FREE ESTIMATE</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Reviews & Trust -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="reviews-rating">
+        <span class="reviews-stars">
+          <svg width="31" height="31" viewBox="0 0 24 24" fill="none" style="vertical-align:-5px"><path d="M12 2l2.9 6.8L22 9.26l-5 4.45L18.18 22 12 18.27 5.82 22 7 13.71 2 9.26l7.1-0.46L12 2z" fill="#FFA800" stroke="#FFA800" stroke-width="0.5"/></svg>
+          <svg width="31" height="31" viewBox="0 0 24 24" fill="none" style="vertical-align:-5px"><path d="M12 2l2.9 6.8L22 9.26l-5 4.45L18.18 22 12 18.27 5.82 22 7 13.71 2 9.26l7.1-0.46L12 2z" fill="#FFA800" stroke="#FFA800" stroke-width="0.5"/></svg>
+          <svg width="31" height="31" viewBox="0 0 24 24" fill="none" style="vertical-align:-5px"><path d="M12 2l2.9 6.8L22 9.26l-5 4.45L18.18 22 12 18.27 5.82 22 7 13.71 2 9.26l7.1-0.46L12 2z" fill="#FFA800" stroke="#FFA800" stroke-width="0.5"/></svg>
+          <svg width="31" height="31" viewBox="0 0 24 24" fill="none" style="vertical-align:-5px"><path d="M12 2l2.9 6.8L22 9.26l-5 4.45L18.18 22 12 18.27 5.82 22 7 13.71 2 9.26l7.1-0.46L12 2z" fill="#FFA800" stroke="#FFA800" stroke-width="0.5"/></svg>
+          <svg width="31" height="31" viewBox="0 0 24 24" fill="none" style="vertical-align:-5px"><path d="M12 2l2.9 6.8L22 9.26l-5 4.45L18.18 22 12 18.27 5.82 22 7 13.71 2 9.26l7.1-0.46L12 2z" fill="#FFA800" stroke="#FFA800" stroke-width="0.5"/></svg>
+        </span>
+        5.0 Google Rating
+      </div>
+      <a class="reviews-btn" href="https://maps.app.goo.gl/emiX3iSZTeCCiMVH9" target="_blank" rel="noopener">See Our Reviews on Google</a>
+      <div class="trust-metrics">
+        <div class="trust-metric">500+ Properties Restored</div>
+        <div class="trust-metric">10+ Years Experience</div>
+        <div class="trust-metric">100% Satisfaction Guarantee</div>
+      </div>
+    </div>
+  </section>
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <h2 class="faq-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <input type="checkbox" id="faq1" />
+          <label class="faq-q" for="faq1">What should I do first if I have water damage?</label>
+          <div class="faq-a">Contact us immediately at (404) 491-8602. Turn off water source if possible, avoid rooms with standing water.</div>
+        </div>
+        <div class="faq-item">
+          <input type="checkbox" id="faq2" />
+          <label class="faq-q" for="faq2">How quickly do you respond?</label>
+          <div class="faq-a">24/7, rapid response, arrive ASAP to minimize damage.</div>
+        </div>
+        <div class="faq-item">
+          <input type="checkbox" id="faq3" />
+          <label class="faq-q" for="faq3">Will insurance cover it?</label>
+          <div class="faq-a">Many policies cover it. We work directly with your insurance and help navigate claims.</div>
+        </div>
+        <div class="faq-item">
+          <input type="checkbox" id="faq4" />
+          <label class="faq-q" for="faq4">Signs of hidden water damage?</label>
+          <div class="faq-a">Musty odors, discolored spots, warping floors, sudden utility bill increases.</div>
+        </div>
+        <div class="faq-item">
+          <input type="checkbox" id="faq5" />
+          <label class="faq-q" for="faq5">How do you prevent mold?</label>
+          <div class="faq-a">Specialized drying equipment and techniques to remove all moisture.</div>
+        </div>
+        <div class="faq-item">
+          <input type="checkbox" id="faq6" />
+          <label class="faq-q" for="faq6">Cost?</label>
+          <div class="faq-a">Free detailed no-obligation estimate after thorough inspection.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Service Area -->
+  <section class="area-section" id="area">
+    <div class="container">
+      <div class="area-title">Serving Greater Atlanta</div>
+      <div class="area-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212271.1529422391!2d-84.56068175!3d33.76764585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5045d6993098d%3A0x66fede2f990b630b!2sAtlanta%2C%20GA!5e0!3m2!1sen!2sus!4v1234567890" width="530" height="270" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">RESTORATION KINGS</div>
+        <div class="footer-contact">
+          <a href="tel:14044918602" style="color:var(--white)">(404) 491-8602</a>
+        </div>
+        <div class="footer-hours">Open 24/7</div>
+      </div>
+      <div class="footer-nav">
+        <a class="footer-nav-link" href="#services">Services</a>
+        <a class="footer-nav-link" href="#how">How It Works</a>
+        <a class="footer-nav-link" href="#reviews">Reviews</a>
+        <a class="footer-nav-link" href="#faq">FAQ</a>
+        <a class="footer-nav-link" href="#contact">Contact</a>
+      </div>
+      <div class="footer-copy">© 2025 Restoration Kings. All rights reserved.</div>
+    </div>
+  </footer>
+  <script>
+    // Hamburger + mobile nav toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    let navOpen = false;
+    menuBtn.addEventListener('click', () => {
+      navOpen = !navOpen;
+      mobileNav.style.display = navOpen ? 'flex' : 'none';
+      menuBtn.setAttribute('aria-expanded', navOpen);
+    });
+    menuBtn.addEventListener('keydown', e => {
+      if(e.key === 'Enter' || e.key === ' ') {
+        menuBtn.click();
+        e.preventDefault();
+      }
+    });
+    // Hide mobile nav on scroll (if open)
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      if(navOpen && (window.scrollY - lastScroll > 30)) {
+        mobileNav.style.display = 'none'; navOpen = false;
+        menuBtn.setAttribute('aria-expanded', false);
+      }
+      lastScroll = window.scrollY;
+    });
+    // Close nav on link click
+    document.querySelectorAll('.mobile-nav .nav-link').forEach(link => {
+      link.addEventListener('click', () => { mobileNav.style.display = 'none'; navOpen = false; menuBtn.setAttribute('aria-expanded', false); });
+    });
+    // Smooth scroll on anchor
+    document.querySelectorAll("a[href^='#']").forEach(link => {
+      link.addEventListener('click', function(e) {
+        const target = document.getElementById(this.getAttribute('href').substr(1));
+        if(target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior:'smooth', block:'start' });
+        }
+      });
+    });
+    // FAQ - keyboard accessibility
+    document.querySelectorAll('.faq-q').forEach(label => {
+      label.setAttribute('tabindex', 0);
+      label.addEventListener('keydown', function(e){
+        if(e.key==='Enter'||e.key===' ') this.click();
+      });
+    });
+    // Set current year in copyright if present
+    let copyEl = document.querySelector('.footer-copy');
+    if(copyEl) copyEl.innerHTML = '© ' + (new Date().getFullYear()) + ' Restoration Kings. All rights reserved.';
+    // Lead form: prevent real submission
+    document.querySelector('.lead-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert("Thank you! We'll respond ASAP for your free estimate.");
+      this.reset();
+    })
+  </script>
+</body>
+</html>
